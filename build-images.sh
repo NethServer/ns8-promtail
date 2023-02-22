@@ -12,7 +12,7 @@ buildah add "${container}" ui /ui
 buildah config --entrypoint=/ "${container}"
 buildah config --label="org.nethserver.rootfull=1" \
     --label="org.nethserver.flags=core_module no_data_backup" \
-	--label="org.nethserver.images=docker.io/grafana/promtail:2.2.1" \
+	--label="org.nethserver.images=docker.io/grafana/promtail:2.7.3" \
 	"${container}"
 buildah commit "${container}" "${repobase}/${reponame}"
 images+=("${repobase}/${reponame}")
