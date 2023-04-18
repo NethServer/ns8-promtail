@@ -22,6 +22,7 @@ ExecStart=/usr/bin/podman run \
     -v ${PROMTAIL_JOURNAL}/:/var/log/journal/ \
     -v /etc/machine-id:/etc/machine-id \
     -v /var/lib/nethserver/%N/state/promtail.yaml:/etc/promtail/config.yml:z \
+    -v positions_file:/var/log/positions.yaml \
     ${PROMTAIL_IMAGE} \
     -config.file=/etc/promtail/config.yml
 ExecStop=/usr/bin/podman stop --ignore --cidfile %t/%N.cid -t 10
