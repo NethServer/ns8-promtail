@@ -25,7 +25,6 @@ if loki_agent_id:
         "bearer_token": loki_env["LOKI_LOGS_INGRESS_TOKEN"],
     })
 
-# XXX add more discovery options here, e.g. external Loki instance to be append to client_list
 
 if not client_list:
     print(agent.SD_ERR + "No client configuration found. Is Loki installed?", file=sys.stderr)
